@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+body a {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background-color: white;
+    color: black;
+    padding: 8px;
+    z-index: 100;
+ }
+
+ .skip-link:focus {
+    top: 0;
+ }
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #e6ac03;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 3px 3px 3px #cf9c03;
+    overflow: hidden;
+}
+
+header .menu, header .brand {
+    background-color: #e6ac03;
+}
+
+header .menu {
+    display: none;
+}
+
+header .brand a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+header .brand {
+    padding: 15px 15px 0;
+}
+
+
+img {
+    display: block;
+}
+
+nav ul {
+    height: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+nav ul li a {
+    width: 100%;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 15px;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background-color: #cf9c03;
+}
+   
+
+.jumbotron {
+    width: 100%;
+    background-image: url("../images/heros/banner.jpg");
+    padding: 18em 30px;
+    background-position: center;
+    box-shadow: 3px 3px 3px grey;
+}
+
+.jumbotron h1, .jumbotron h2 {
+    text-shadow: 3px 3px 3px black;
+}
+
+.jumbotron h1 { 
+    text-align: center;
+    color: #DDD;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.jumbotron h2 { 
+    text-align: center;
+    color: #DDD;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+main {
+    padding: 30px 20px;
+}
+
+main h1 {
+    text-align: center;
+    padding: 30px;
+}
+
+main .container {
+    width: 90%;
+    gap: 30px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+main .container .card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 3px 8px grey;
+}
+
+main .image .badge {
+    position: absolute;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid rgb(99, 99, 99);
+    border-left: none;
+    background-color: grey;
+}
+
+main .image img {
+    max-height: 248px;
+    width: 100%;
+}
+
+main .card .detail {
+    padding: 15px;
+}
+
+main .card .rating, main .card .title {
+    font-weight: bold;
+}
+
+main .card .title {
+    font-size: 1.2em;
+}
+
+main .card .title a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+main .card .desc {
+    font-size: 0.8em;
+    text-align: justify;
+}
+
+footer {
+    margin-top: 20px;
+	padding: 25px 0;
+	text-align: center;
+	color: black;
+	background-color: #e6ac03;
+}
+
+@media only screen and (max-width: 1100px) {
+    main .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main .card .title {
+        font-size: 1.7em;
+    }
+
+    main .card .desc {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    header {
+        grid-template-columns: 2fr 2fr;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr 12fr;
+    }
+
+    header .menu {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        margin: 0 auto;
+        color: black;
+        line-height: 58px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    nav {
+        z-index: -1;
+        margin-top: -250px;
+        display: inline-block;
+        background-color: #ffbf00;
+        grid-column-end: 3;
+        grid-column-start: 1;
+        transition: all 0.5s ease;
+    }
+
+    nav ul {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .nav-mobile {
+        margin-top: 0;
+    }
+
+    .jumbotron {
+        padding: 10em 30px;
+    }
+
+    .jumbotron h1 { 
+        font-size: 1.5em;
+    }
+    
+    .jumbotron h2 { 
+        font-size: 1em;
+    }
+
+    main .container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media only screen and (max-width: 700px) {
+    .jumbotron h1 { 
+        font-size: 1.2em;
+    }
+    
+    .jumbotron h2 { 
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main h1 {
+        font-size: 1.3em;
+    }
+}
