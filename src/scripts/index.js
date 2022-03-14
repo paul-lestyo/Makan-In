@@ -1,41 +1,27 @@
-import 'regenerator-runtime'; /* for async await transpile */
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons/faUserCircle';
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons/faHeart';
 import '../styles/main.css';
-import data from "../DATA.json";
+import 'regenerator-runtime'; /* for async await transpile */
+import App from './views/app';
+import swRegister from './utils/sw-register';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit.min';
 
-document.querySelector("#menu").addEventListener("click", (e) => {
-    document.querySelector("nav").classList.toggle("nav-mobile");
-	e.stopPropagation();
+library.add(faHeart, faUserCircle, farHeart);
+dom.watch();
+
+const app = new App({
+  button: document.querySelector('#menu'),
+  drawer: document.querySelector('nav'),
+  content: document.querySelector('#mainContent'),
 });
 
-document.querySelector("body").addEventListener("click", (e) => {
-    document.querySelector("nav").classList.remove("nav-mobile");
+window.addEventListener('hashchange', () => {
+  app.renderPage();
 });
 
-
-const container = document.querySelector(".container");
-
-let data_html = ``;
-data.restaurants.forEach(function(restaurant) {
-    data_html += `
-            <div class="card">
-                <div class="image">
-                    <div class="badge">
-                        <span>Kota ${restaurant.city}</span>
-                    </div>
-                    <img src="${restaurant.pictureId}" alt="${restaurant.name}">
-                </div>
-                <div class="detail">
-                    <div class="rating">
-                        Rating: ${restaurant.rating}
-                    </div>
-                    <div class="title">
-                        <a href="#">${restaurant.name}</a>
-                    </div>
-                    <div class="desc">
-                        ${restaurant.description}
-                    </div>
-                </div>
-            </div>`;
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
 });
-
-container.innerHTML = data_html

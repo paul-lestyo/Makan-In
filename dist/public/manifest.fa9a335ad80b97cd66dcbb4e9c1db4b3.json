@@ -1,0 +1,42 @@
+{
+  "icons": [
+    {
+      "src": "icon_512x512.199ec9697a6425429b57ae29c1bd308b.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.998276b9b2dc48460e422850488a2ef5.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.8e1624c392c586299c441a18a106c06b.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.4f3c70c02a5814088e5e15515bc4ab5a.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.f7e08f0fbf581de1b21e78d8064b211b.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.de62fb34bac8e2fc6ffdafaeb2601ca3.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Makan In Lite",
+  "short_name": "Makan In Lite",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "description": "Tempat Mencari Restaurant di Berbagai Negara",
+  "background_color": "#e6ac03e6",
+  "theme_color": "#e6ac03e6"
+}
